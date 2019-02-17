@@ -3,9 +3,9 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 public class lnrReg {
-    private double slope=0;
+    private double slope;
     private double step;
-    private double start=50;
+    private double start;
     public lnrReg(double step1, double slope1, double start1){
         step = step1;
         slope = slope1;
@@ -65,8 +65,11 @@ public class lnrReg {
             x.add(i+(Math.random()*2));
             y.add(i+(Math.random()*34));
         }
-        lnrReg learning = new lnrReg(1.5,0,0);
-        learning.update(2,x,y);
+        lnrReg learning = new lnrReg(1,0,0);
+        learning.update(x.size(),x,y);
         System.out.println(learning.getStart());
+        double start = learning.getStart();
+        double slope = learning.getSlope();
+        System.out.println(slope+start);
     }
 }
