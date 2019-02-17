@@ -6,6 +6,11 @@ public class lnrReg {
     private double slope=0;
     private double step;
     private double start=50;
+    public lnrReg(double step1, double slope1, double start1){
+        step = step1;
+        slope = slope1;
+        start = start1;
+    }
     public double h(double x){
         return start + (slope*x);
     }
@@ -47,8 +52,21 @@ public class lnrReg {
         slope = temp0;
         start = temp1;
     }
+    public double getSlope(){
+        return slope;
+    }
+    public double getStart(){
+        return start;
+    }
     public static void main(String[] args){
-        Array
-        System.out.println("hello");
+        ArrayList<Double> x = new ArrayList<>();
+        ArrayList<Double> y = new ArrayList<>();
+        for(int i =0;i<1000000;i++){
+            x.add(i+(Math.random()*2));
+            y.add(i+(Math.random()*34));
+        }
+        lnrReg learning = new lnrReg(.5,0,0);
+        learning.update(2,x,y);
+        System.out.println(learning.getStart());
     }
 }
