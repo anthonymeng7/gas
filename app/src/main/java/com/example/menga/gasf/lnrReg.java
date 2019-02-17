@@ -61,11 +61,11 @@ public class lnrReg {
     public static void main(String[] args){
         ArrayList<Double> x = new ArrayList<>();
         ArrayList<Double> y = new ArrayList<>();
-        for(int i =0;i<1000000;i++){
+        for(int i =0;i<10000;i++){
             x.add(i+(Math.random()*2));
             y.add(i+(Math.random()*34));
         }
-        lnrReg learning = new lnrReg(.5,0,0);
+        lnrReg learning = new lnrReg(1.5,0,0);
         learning.update(2,x,y);
         System.out.println(learning.getStart());
     }
